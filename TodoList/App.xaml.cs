@@ -1,10 +1,14 @@
-﻿namespace TodoList
+﻿using System.Collections.ObjectModel;
+
+namespace TodoList
 {
     public partial class App : Application
     {
+        
         public App()
         {
             InitializeComponent();
+            
         }
 
         protected override Window CreateWindow(IActivationState? activationState)

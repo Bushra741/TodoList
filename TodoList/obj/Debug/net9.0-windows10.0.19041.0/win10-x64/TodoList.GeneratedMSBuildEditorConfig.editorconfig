@@ -40,6 +40,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = TodoList.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
 
+[C:/Users/bushra.bushra/source/repos/TodoList/TodoList/MoreInfo.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TodoList.MoreInfo.xaml
+build_metadata.AdditionalFiles.TargetPath = MoreInfo.xaml
+build_metadata.AdditionalFiles.RelativePath = MoreInfo.xaml
+
 [C:/Users/bushra.bushra/source/repos/TodoList/TodoList/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = TodoList.Resources.Styles.Colors.xaml

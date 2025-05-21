@@ -4,11 +4,10 @@
              x:Class="TodoList.MainPage">
 
     <Grid RowDefinitions="100, Auto, *"
-          ColumnDefinitions=".75*, .25*"
+          ColumnDefinitions=".10*,.90*, .25*"
           Padding="10"
           RowSpacing="10" 
           ColumnSpacing="10">
-
 
         <Image Grid.ColumnSpan="2"
                Source="thingstodo.jpg"
@@ -17,37 +16,58 @@
         <Entry x:Name ="TodoListEntry"
             Placeholder="Enter your task"
                Grid.Row="1"
-               
-        />
-
+                Grid.Column="1" />
+        
         <Button 
            
             Text="Add"
                 Grid.Row="1"
-                Grid.Column="1"
+                Grid.Column="3"
             Clicked="OnButtonClick"
             />
+        <Button 
+            x:Name="SelectButton"
+            Text="select"
+            Grid.Row=" 1"
+            Grid.Column="0"
+            Clicked="OnSelectClick"/>
         
-        
-
-        <CollectionView x:Name="TodoListView"
-            Grid.Row="2" Grid.ColumnSpan="2"
-                        ItemsSource="{Binding MyList}" SelectionMode="Multiple" Margin="10" >
+        <CollectionView x:Name="TodoListCollection"
+            Grid.Row="2" Grid.ColumnSpan="3" 
+                        ItemsSource="{Binding MyList}" SelectionMode="Single" Margin="10" SelectionChanged="ListIn" >
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                  
-                    <StackLayout Orientation="Horizontal">
-                        <Label Text="{Binding .}" FontSize="20" FontAttributes="Bold" 
-                          />
-                    </StackLayout>
+                    <Frame Padding="10" Margin="5"  >
+                        <Frame.GestureRecognizers>
+                           
+                            <TapGestureRecognizer 
+                                NumberOfTapsRequired="2"    
+                                 CommandParameter="{Binding .}"/>
+                        </Frame.GestureRecognizers>
+                        <StackLayout Orientation="Horizontal">
+                        <Label Text="{Binding .}" FontSize="20" FontAttributes="Bold" />
+                            <Grid RowDefinitions="Auto,Auto"
+                          ColumnDefinitions="*,*"
+                          Margin="10,0,0,0">
+                                <Label Text="" Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="0" />
+                            </Grid>
+                        </StackLayout>
+                    </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
+            
         </CollectionView>
 
         <Button Text="Delete"
-                Grid.Row="2"
-                Grid.Column="1"
-                Clicked="OnDeleteClick"
+                Grid.Row="0"
+                Grid.Column="3"
+                Padding="10"
+                FontAttributes="Bold"
+                BackgroundColor="Transparent"
+                TextColor="Black"
+                Clicked="OnDeleteButton"
+                
+               
                 />
     </Grid>
 
